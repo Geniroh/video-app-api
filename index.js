@@ -23,6 +23,9 @@ app.use('/api/users', userRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
 
+app.get("/", (req,res,next) => {
+    res.send("You are on the video app api");
+})
 //Error handling middleware
 app.use((err, req, res, next) => {
     const status = err.status || 500;
